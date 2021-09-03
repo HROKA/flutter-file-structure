@@ -3,13 +3,13 @@ echo -e "\033[32m ^_^ Strucutre your new flutter project with Getx and other pac
 #  get current directory
 CURRENT_DIR=$(pwd)
 # add pacakge name
-PACKAGE_NAME="flutter-file-structure/"
+PACKAGE_NAME="flutter-file-structure"
 # get package directory
 PACKAGE_PATH="$CURRENT_DIR/$PACKAGE_NAME"
 # sh file name
 SH_FILE_NAME="install-flutter-file-structure.sh"
 # sh file path
-SH_FILE_PATH="$PACKAGE_PATH/$SH_FILE_NAME"
+SH_FILE_PATH="$CURRENT_DIR/$SH_FILE_NAME"
 
 # check if package directory exists
 if [ -d "$CURRENT_DIR/$PACKAGE_NAME" ]; then
@@ -23,17 +23,16 @@ fi
 git clone https://github.com/HROKA/flutter-file-structure.git
 
 Yes | rm -R "$PACKAGE_PATH/.git"
+Yes | rm  "$PACKAGE_PATH/README.md"
 
 cp -R "$PACKAGE_PATH/." "$CURRENT_DIR/"
 
 Yes | rm -R "$PACKAGE_PATH"
-
-if [ -d "$SH_FILE_PATH" ]; then
+echo "$SH_FILE_PATH"
+if [  "$SH_FILE_PATH" ]; then
   ### Take action if $DIR exists ###
   echo "remove shell file ${DIR}..."
 Yes | rm "$SH_FILE_PATH"
-  echo "remove package readme file ${DIR}..."
-Yes | rm "$PACKAGE_PATH/README.md"
 fi
 
 echo -e "\033[36m ###--- install flutter packages ---###"

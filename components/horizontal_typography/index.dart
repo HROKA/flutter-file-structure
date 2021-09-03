@@ -1,0 +1,1 @@
+export './HorizontalTypography.dart';

@@ -28,7 +28,7 @@ Yes | rm  "$PACKAGE_PATH/README.md"
 cp -R "$PACKAGE_PATH/." "$CURRENT_DIR/"
 
 Yes | rm -R "$PACKAGE_PATH"
-echo "$SH_FILE_PATH"
+
 if [  "$SH_FILE_PATH" ]; then
   ### Take action if $DIR exists ###
   echo "remove shell file ${DIR}..."

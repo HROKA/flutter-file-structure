@@ -1,0 +1,21 @@
+export 'package:get/get.dart';
+
+export './SplashScreen.dart';
+export './add_new_address/index.dart';
+export './categories_screen/index.dart';
+export './complete_profile/index.dart';
+export './delivery_screen/index.dart';
+export './feed_back_screen/index.dart';
+export './find_us/index.dart';
+export './home_screen/index.dart';
+export './invite_friends_screen/index.dart';
+export './my_account/index.dart';
+export './my_app/index.dart';
+export './my_orders/index.dart';
+export './my_wallet/index.dart';
+export './pickup/index.dart';
+export './rate_us_screen/index.dart';
+export './save_on_map/index.dart';
+export './sign_up/index.dart';
+export './test_screen/index.dart';
+export './verification/index.dart';

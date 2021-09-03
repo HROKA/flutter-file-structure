@@ -13,7 +13,7 @@ SH_FILE_PATH="$CURRENT_DIR/$SH_FILE_NAME"
 #vs code settings name 
 VS_SETTINGS_NAME=".vscode"
 #vs code settings path
-VS_SETTINGS_PATH="$PACKAGE_PATH/$VS_SETTINGS_NAME"
+VS_SETTINGS_PACKAGE_PATH="$PACKAGE_PATH/$VS_SETTINGS_NAME"
 
 # check if package directory exists
 if [ -d "$CURRENT_DIR/$PACKAGE_NAME" ]; then
@@ -38,12 +38,15 @@ if [  "$SH_FILE_PATH" ]; then
 Yes | rm "$SH_FILE_PATH"
 fi
 
-
-if [  "$SH_FILE_PATH" ]; then
+if [ -d "$CURRENT_DIR/$VS_SETTINGS_NAME" ]; then
   ### Take action if $DIR exists ###
-  echo "add vscode settings ..."
-Yes | rm "$SH_FILE_PATH"
+  echo "copy vscode setting file"
+ cp "$VS_SETTINGS_PACKAGE_PATH/settings.json" "$CURRENT_DIR/$VS_SETTINGS_NAME"
+else
+  echo "added .vscode folder and settins file "
+mv $VS_SETTINGS_PACKAGE_PATH ./
 fi
+
 
 echo -e "\033[36m ###--- Remove cloning packages ---###"
 Yes | rm -R "$PACKAGE_PATH"

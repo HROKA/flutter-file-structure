@@ -10,6 +10,10 @@ PACKAGE_PATH="$CURRENT_DIR/$PACKAGE_NAME"
 SH_FILE_NAME="install-flutter-file-structure.sh"
 # sh file path
 SH_FILE_PATH="$CURRENT_DIR/$SH_FILE_NAME"
+#vs code settings name 
+VS_SETTINGS_NAME=".vscode"
+#vs code settings path
+VS_SETTINGS_PATH="$PACKAGE_PATH/$VS_SETTINGS_NAME"
 
 # check if package directory exists
 if [ -d "$CURRENT_DIR/$PACKAGE_NAME" ]; then
@@ -27,13 +31,22 @@ Yes | rm  "$PACKAGE_PATH/README.md"
 
 cp -R "$PACKAGE_PATH/." "$CURRENT_DIR/"
 
-Yes | rm -R "$PACKAGE_PATH"
 
 if [  "$SH_FILE_PATH" ]; then
   ### Take action if $DIR exists ###
   echo "remove shell file ${DIR}..."
 Yes | rm "$SH_FILE_PATH"
 fi
+
+
+if [  "$SH_FILE_PATH" ]; then
+  ### Take action if $DIR exists ###
+  echo "add vscode settings ..."
+Yes | rm "$SH_FILE_PATH"
+fi
+
+echo -e "\033[36m ###--- Remove cloning packages ---###"
+Yes | rm -R "$PACKAGE_PATH"
 
 echo -e "\033[36m ###--- install flutter packages ---###"
 echo -e "\033[36m ###--- Every thing done sucssesfully ---###"
